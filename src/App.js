@@ -9,8 +9,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* <Route path='/' element={} /> */}
-        <Route path='/menusneaker' element={<LayOutMenuSneaker />} />
-        <Route path='/detailsneaker' element={<LayOutDetailSneaker />} />
+        <Route path='/:typeOfProduct/page/:pageNumber' element={<LayOutMenuSneaker />} />
+        <Route path='/product/:sneakerId' element={<LayOutDetailSneaker />} />
       </Routes>
     </BrowserRouter>
   );
