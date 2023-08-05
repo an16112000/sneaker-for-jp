@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LayOutDetailSneaker from './LayOutDefault/LayOutDetailSneaker/LayOutDetailSneaker';
 import LayOutMenuSneaker from './LayOutDefault/LayOutMenuSneaker/LayOutMenuSneaker';
 
@@ -9,8 +9,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* <Route path='/' element={} /> */}
-        <Route path='/menusneaker' element={<LayOutMenuSneaker />} />
-        <Route path='/detailsneaker' element={<LayOutDetailSneaker />} />
+        {/* <Route path='/menusneaker' element={<LayOutMenuSneaker />} />
+        <Route path='/detailsneaker' element={<LayOutDetailSneaker />} /> */}
       </Routes>
     </BrowserRouter>
   );
