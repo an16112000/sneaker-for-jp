@@ -6,7 +6,9 @@ const DetailSneaker = () => {
     const fetchApi = async() => {
         const response = await getDataFromSnkrDunk();
         console.log(response)
+        setData(response)
     }
+    console.log(data)
     fetchApi();
     return (
         <>
