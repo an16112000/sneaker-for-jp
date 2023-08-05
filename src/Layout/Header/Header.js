@@ -25,7 +25,7 @@ const dataType = [
     }
 ]
 
-function Header() {
+function Header({ onChangeCode, onSubmit, valueCode, onChangeSize, valueSize }) {
     return (
         <div className={styles.container}>
             <div className={styles.options}>
@@ -41,12 +41,24 @@ function Header() {
             </div>
             <div className={styles.search}>
                 <div className={styles.input}>
-                    <input className={styles.searchCode} placeholder="Code..." />
-                    <input className={styles.searchSize} placeholder="Size..." />
+                    <input
+                        value={valueCode}
+                        onChange={onChangeCode}
+                        className={styles.searchCode}
+                        placeholder="Code..." />
+                    <input
+                        value={valueSize}
+                        onChange={onChangeSize}
+                        className={styles.searchSize}
+                        placeholder="Size..." />
                 </div>
-                <button>Submit</button>
+                <button
+                    onClick={onSubmit}
+                >
+                    Submit
+                </button>
             </div>
-            
+
         </div>
     )
 }
