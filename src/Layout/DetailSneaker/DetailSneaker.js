@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getDataFromSnkrDunk } from "../../GetData/getDataFromSnkrDunk";
 
-const DetailSneaker = () => {
+const DetailSneaker = ({code, size}) => {
     const [data, setData] = useState([])
     useEffect(
         () => {
@@ -12,7 +12,7 @@ const DetailSneaker = () => {
             }
             console.log(data)
             fetchApi();
-        }, []
+        }, [code, size]
     )
     return (
         <>
