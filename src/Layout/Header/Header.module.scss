@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 15px 0;
+    box-shadow: 0 2px #888888;
+}
+
+.options {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.search {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.input {
+    margin-right: 20px;
+}
+
+.searchCode {
+    border-radius: 4px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.searchSize {
+    width: 50px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+

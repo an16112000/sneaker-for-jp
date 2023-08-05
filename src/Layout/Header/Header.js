@@ -39,6 +39,13 @@ function Header() {
                     )
                 }
             </div>
+            <div className={styles.search}>
+                <div className={styles.input}>
+                    <input className={styles.searchCode} placeholder="Code..." />
+                    <input className={styles.searchSize} placeholder="Size..." />
+                </div>
+                <button>Submit</button>
+            </div>
             
         </div>
     )
