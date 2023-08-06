@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.scss"
 import { Link } from "react-router-dom";
 
@@ -25,7 +25,27 @@ const dataType = [
     }
 ]
 
-function Header({ onChangeCode, onSubmit, valueCode, onChangeSize, valueSize }) {
+function Header() {
+    const [code, setCode] = useState('')
+    const [submitCode, setSubmitCode] = useState('')
+    const [size, setSize] = useState('')
+    const [submitSize, setSubmitSize] = useState('')
+
+    function hanldeSubmit() {
+        setSubmitCode(code)
+        setSubmitSize(size)
+        console.log(1)
+    }
+
+    const handleChangeCode = (e) => {
+        console.log(e.target.value)
+        setCode(e.target.value)
+    }
+
+    const handleChangeSize = (e) => {
+        setSize(e.target.value)
+    }
+    console.log(submitCode, submitSize)
     return (
         <div className={styles.container}>
             <div className={styles.options}>
@@ -42,21 +62,22 @@ function Header({ onChangeCode, onSubmit, valueCode, onChangeSize, valueSize }) 
             <div className={styles.search}>
                 <div className={styles.input}>
                     <input
-                        value={valueCode}
-                        onChange={onChangeCode}
+                        value={code}
+                        onChange={handleChangeCode}
                         className={styles.searchCode}
                         placeholder="Code..." />
                     <input
-                        value={valueSize}
-                        onChange={onChangeSize}
+                        value={size}
+                        onChange={handleChangeSize}
                         className={styles.searchSize}
                         placeholder="Size..." />
                 </div>
-                <button
-                    onClick={onSubmit}
+                <Link
+                    to={`/product/${code}`}
+                    onClick={hanldeSubmit}
                 >
                     Submit
-                </button>
+                </Link>
             </div>
 
         </div>

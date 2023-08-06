@@ -1,36 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../../Layout/Header/Header";
 import DetailSneaker from "../../Layout/DetailSneaker/DetailSneaker";
+import { useParams } from "react-router-dom";
 
 function LayOutDetailSneaker() {
-    const [code, setCode] = useState('')
-    const [submitCode, setSubmitCode] = useState('')
-    const [size, setSize] = useState('')
-    const [submitSize, setSubmitSize] = useState('')
+    let {sneakerId} = useParams()
+    console.log(sneakerId)
 
-    function hanldeSubmit() {
-        setSubmitCode(code)
-        setSubmitSize(size)
-    }
 
-    const handleChangeCode = (e) => {
-        setCode(e.target.value)
-    }
 
-    const handleChangeSize = (e) => {
-        setSize(e.target.value)
-    }
-    console.log(submitCode, submitSize)
     return (
         <>
-            <Header 
-                valueCode={code}
-                valueSize={size}
-                onSubmit={hanldeSubmit}
-                onChangeCode={handleChangeCode}
-                onChangeSize={handleChangeSize}
-            />
-            <DetailSneaker code={submitCode} size={submitSize} />
+            <Header />
+            <DetailSneaker code={sneakerId} />
         </>
     )
 }
